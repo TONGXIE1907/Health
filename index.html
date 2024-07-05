@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             background-color: #f7f7f7;
+            font-size: 80%; /* 缩小文字到80% */
         }
         .header {
             background-color: #0092db;
@@ -25,30 +26,34 @@
             flex: 1;
         }
         .back-icon {
-            font-size: 24px;
-            margin-left: 10px;
             cursor: pointer;
+            width: 24px; /* 调整SVG图标的大小 */
+            height: 24px; /* 调整SVG图标的大小 */
+            fill: #fff; /* SVG图标的颜色 */
         }
         .container {
             display: flex;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
+            margin-top: 0px; /* 向上移动content-box */
         }
         .content-box {
             display: flex;
             width: 100%;
-            padding: 20px;
+            padding: 8px;
             background-color: #fff;
             /* box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); */
         }
         .labels {
             flex: 1;
             text-align: left;
+            line-height: 2.6;
         }
         .values {
             flex: 1;
             text-align: right;
             font-weight: 600;
+            line-height: 2.6;
         }
         .labels p, .values p {
             margin: 5px 0;
@@ -57,7 +62,11 @@
 </head>
 <body>
     <div class="header">
-        <span class="back-icon">&lt;</span>
+        <a href="blank.html"> <!-- 添加链接到空白页面 -->
+            <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                <path d="M768 951.4L337.815 530.15c-10.237-10.031-10.237-26.278 0-36.303L768 72.59V0L263.678 493.848c-10.237 10.024-10.237 26.271 0 36.303L768 1024v-72.6z" fill="#ffffff"></path>
+            </svg>
+        </a>
         <h1>合格证</h1>
         <span></span> <!-- This empty span is to balance the flex layout -->
     </div>
@@ -78,7 +87,7 @@
                 <p>男</p>
                 <p>21</p>
                 <p>510703**********33</p>
-                <p>A食品、乳制品、餐（饮）具集中消毒、药品、公厕管理、饮用水</p>
+                <p>A食品、乳制品、餐（饮）具集中消毒、药品、公共管理、饮用水</p>
                 <p>川(2023)51070329-110949</p>
                 <p>2024-10-04</p>
                 <p>涪城区</p>
