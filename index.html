@@ -1,99 +1,171 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5"> <!-- 设置缩放为200% -->
     <title>合格证</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            /* 设置字体 */
             margin: 0;
+            /* 移除默认外边距 */
             padding: 0;
+            /* 移除默认内边距 */
             background-color: #f7f7f7;
-            font-size: 80%; /* 缩小文字到80% */
+            /* 设置背景颜色 */
+            font-size: 150%;
+            /* 缩小文字到80% */
         }
+
         .header {
             background-color: #0092db;
+            /* 设置背景颜色 */
             color: #fff;
+            /* 设置字体颜色 */
             padding: 10px;
+            /* 设置内边距 */
             text-align: center;
+            /* 设置文本居中 */
             display: flex;
+            /* 使用Flexbox布局 */
             align-items: center;
+            /* 垂直居中对齐 */
             justify-content: space-between;
+            /* 两端对齐 */
         }
+
         .header h1 {
             font-size: 20px;
+            /* 设置字体大小 */
             margin: 0;
+            /* 移除默认外边距 */
             flex: 1;
+            /* 占据剩余空间 */
         }
+
         .back-icon {
             cursor: pointer;
-            width: 24px; /* 调整SVG图标的大小 */
-            height: 24px; /* 调整SVG图标的大小 */
-            fill: #fff; /* SVG图标的颜色 */
+            /* 设置鼠标样式为指针 */
+            width: 24px;
+            /* 调整SVG图标的宽度 */
+            height: 24px;
+            /* 调整SVG图标的高度 */
+            fill: #fff;
+            /* 设置SVG图标的颜色 */
         }
+
         .container {
             display: flex;
+            /* 使用Flexbox布局 */
             justify-content: center;
+            /* 居中对齐 */
             padding: 10px;
-            margin-top: 0px; /* 向上移动content-box */
+            /* 设置内边距 */
+            margin-top: 0px;
+            /* 向上移动content-box */
+            height: 50vh;
+            /* 设置container的高度为视口高度的70% */
+            align-items: center;
+            /* 垂直居中对齐 */
         }
+
         .content-box {
             display: flex;
-            width: 100%;
+            width: 96%;
+            height: 96%;
             padding: 8px;
             background-color: #fff;
-            /* box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); */
+            overflow-x: auto;
+            /* 水平溢出时显示滚动条 */
+            position: relative;
+            /* 相对定位 */
         }
-        .labels {
-            flex: 1;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* 固定表格布局 */
+        }
+
+        th, td {
+            padding: 8px;
+            font-size: 1.5rem;
+            white-space: normal;
+            /* 允许自动换行 */
+            word-wrap: break-word;
+            /* 断行处理 */
+        }
+
+        th {
             text-align: left;
-            line-height: 2.6;
+            font-weight: normal;
+            text-overflow: ellipsis;
+            /* 文本溢出时显示省略号 */
+            padding-left: 2px; /* 增加左侧内边距 */
         }
-        .values {
-            flex: 1;
+
+        td {
             text-align: right;
-            font-weight: 600;
-            line-height: 2.6;
-            white-space: nowrap；
-        }
-        .labels p, .values p {
-            margin: 5px 0;
+            /* 右对齐 */
+            font-weight: bold;
+            /* 加粗 */
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <a href="blank.html"> <!-- 添加链接到空白页面 -->
             <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-                <path d="M768 951.4L337.815 530.15c-10.237-10.031-10.237-26.278 0-36.303L768 72.59V0L263.678 493.848c-10.237 10.024-10.237 26.271 0 36.303L768 1024v-72.6z" fill="#ffffff"></path>
+                <path
+                    d="M768 951.4L337.815 530.15c-10.237-10.031-10.237-26.278 0-36.303L768 72.59V0L263.678 493.848c-10.237 10.024-10.237 26.271 0 36.303L768 1024v-72.6z"
+                    fill="#ffffff"></path>
             </svg>
         </a>
         <h1>合格证</h1>
-        <span></span> <!-- This empty span is to balance the flex layout -->
+        <span></span> <!-- 空的span用于平衡flex布局 -->
     </div>
     <div class="container">
         <div class="content-box">
-            <div class="labels">
-                <p>姓名</p>
-                <p>性别</p>
-                <p>年龄</p>
-                <p>身份证号</p>
-                <p>从业范围</p>
-                <p>合格证号</p>
-                <p>有效期</p>
-                <p>所属区县</p>
-            </div>
-            <div class="values">
-                <p>辛峻吉</p>
-                <p>男</p>
-                <p>21</p>
-                <p>510703**********33</p>
-                <p>A食品、乳制品、餐（饮）具集中消毒、药品、公共管理、饮用水</p>
-                <p>川(2023)51070329-110949</p>
-                <p>2024-10-04</p>
-                <p>涪城区</p>
-            </div>
+            <table>
+                <tr>
+                    <th>姓名</th>
+                    <td>辛峻吉</td>
+                </tr>
+                <tr>
+                    <th>性别</th>
+                    <td>男</td>
+                </tr>
+                <tr>
+                    <th>年龄</th>
+                    <td>21</td>
+                </tr>
+                <tr>
+                    <th>身份证号</th>
+                    <td>510703**********33</td>
+                </tr>
+                <tr>
+                    <th>从业范围</th>
+                    <td>A食品、乳制品、餐（饮）具集中消毒、药品、公共管理、饮用水</td>
+                </tr>
+                <tr>
+                    <th>合格证号</th>
+                    <td>川(2023)51070329-110949</td>
+                </tr>
+                <tr>
+                    <th>有效期</th>
+                    <td>2024-10-04</td>
+                </tr>
+                <tr>
+                    <th>所属区县</th>
+                    <td>涪城区</td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
+
 </html>
